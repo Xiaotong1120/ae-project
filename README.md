@@ -1,5 +1,7 @@
 ## ae-project
 
+This project focuses on transforming raw delivery task events into an analytics-ready delivery fact table with a clearly defined grain and duration logic, enabling consistent bottleneck analysis across multiple spatial and operational dimensions.
+
 ### Business Question
 How can analytics-ready delivery data be used to identify bottlenecks across different areas of interest (AOIs) in the last-mile delivery process?
 
