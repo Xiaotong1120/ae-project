@@ -23,6 +23,18 @@ During metric construction, the following characteristics of the raw data were o
 2. A very small number of records contain negative or extremely large durations, which are attributable to inconsistencies or delays in raw event recording rather than metric construction errors.  
 3. These characteristics are explicitly surfaced rather than silently filtered, allowing analytical boundaries to be defined transparently in later stages of the project.  
 
+### Delivery Duration Analysis Boundary
+Exploratory validation of the delivery duration metric shows that the majority of delivery tasks follow a consistent operational pattern, while a small fraction exhibit fundamentally different completion behavior.   
+   
+Specifically:
+1. Approximately 95% of deliveries are completed within 8 hours.
+2. Around 99% of deliveries are completed within 24 hours.
+3. Beyond the 24-hour mark, delivery duration enters a distinct long-tail regime, with sharply reduced density and significantly different completion dynamics.
+  
+This distributional break indicates a transition from standard delivery execution to exceptional or delayed completion scenarios (e.g. postponed confirmation, multi-day holding, or late event recording).  
+For this reason, AOI-level bottleneck analysis in this project focuses on deliveries completed within a 24-hour window.  
+Rather than removing long-tail records, the model explicitly flags which deliveries are suitable for bottleneck analysis, preserving transparency and analytical flexibility.  
+
 ### Modeling Philosophy
 This project prioritizes:   
 1. explicit metric definition over implicit calculations,
