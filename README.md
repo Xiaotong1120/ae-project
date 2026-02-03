@@ -19,9 +19,9 @@ Using this dataset, the goal of this project is to analyze whether deliveries to
 
 Delivery duration is derived as the time difference between task acceptance and delivery completion timestamps.  
 During metric construction, the following characteristics of the raw data were observed:  
-Delivery duration exhibits a long-tailed distribution, with the majority of orders completed within a few hours.  
-A very small number of records contain negative or extremely large durations, which are attributable to inconsistencies or delays in raw event recording rather than metric construction errors.  
-These characteristics are explicitly surfaced rather than silently filtered, allowing analytical boundaries to be defined transparently in later stages of the project.  
+1. Delivery duration exhibits a long-tailed distribution, with the majority of orders completed within a few hours.  
+2. A very small number of records contain negative or extremely large durations, which are attributable to inconsistencies or delays in raw event recording rather than metric construction errors.  
+3. These characteristics are explicitly surfaced rather than silently filtered, allowing analytical boundaries to be defined transparently in later stages of the project.  
 
 ### Modeling Philosophy
 This project prioritizes:   
