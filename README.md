@@ -23,6 +23,14 @@ During metric construction, the following characteristics of the raw data were o
 2. A very small number of records contain negative or extremely large durations, which are attributable to inconsistencies or delays in raw event recording rather than metric construction errors.  
 3. These characteristics are explicitly surfaced rather than silently filtered, allowing analytical boundaries to be defined transparently in later stages of the project.  
 
+#### Fact Table: fact_delivery
+fact_delivery is an analytics-ready delivery fact table derived from raw LaDe delivery-stage task data.  
+Grain: one row per order per delivery task
+1. Core fields: order_id, accept_time, delivery_time, city, aoi_id, aoi_type, courier_id, ds
+2. Derived metric: delivery_duration_minutes
+3. Analysis flags: is_valid_for_bottleneck, delivery_duration_category
+The goal is to standardize delivery-stage performance at a consistent grain, enabling reusable bottleneck analysis across AOI and other operational dimensions.
+
 ### Delivery Duration Analysis Boundary
 Exploratory validation of the delivery duration metric shows that the majority of delivery tasks follow a consistent operational pattern, while a small fraction exhibit fundamentally different completion behavior.   
    
