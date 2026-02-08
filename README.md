@@ -28,7 +28,7 @@ fact_delivery is an analytics-ready delivery fact table derived from raw LaDe de
 Grain: one row per order per delivery task
 1. Core fields: order_id, accept_time, delivery_time, city, aoi_id, aoi_type, courier_id, ds
 2. Derived metric: delivery_duration_minutes
-3. Analysis flags: is_valid_for_bottleneck, delivery_duration_category
+3. Analysis flags: is_valid_for_bottleneck, delivery_duration_category  
 The goal is to standardize delivery-stage performance at a consistent grain, enabling reusable bottleneck analysis across AOI and other operational dimensions.
 
 ### Delivery Duration Analysis Boundary
