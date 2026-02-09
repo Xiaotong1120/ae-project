@@ -30,7 +30,8 @@ Grain: one row per order per delivery task
 2. Derived metric: delivery_duration_minutes
 3. Analysis flags: is_valid_for_bottleneck, delivery_duration_category
    
-The goal is to standardize delivery-stage performance at a consistent grain, enabling reusable bottleneck analysis across AOI and other operational dimensions.
+The goal is to standardize delivery-stage performance at a consistent grain, enabling reusable bottleneck analysis across AOI and other operational dimensions.  
+This fact table is implemented as a dbt model on DuckDB and can be reproduced locally via dbt run and validated via dbt test.
 
 ### Delivery Duration Analysis Boundary
 Exploratory validation of the delivery duration metric shows that the majority of delivery tasks follow a consistent operational pattern, while a small fraction exhibit fundamentally different completion behavior.   
@@ -50,4 +51,6 @@ This project prioritizes:
 2. clarity of grain over premature dimensional modeling,
 3. and transparency of data limitations over aggressive data filtering.
 
-Dimension tables (e.g. date or location dimensions) are intentionally deferred in this phase, as the project currently focuses on validating and stabilizing a single delivery fact table.
+Dimension tables (e.g. date or location dimensions) are intentionally deferred in this phase, as the project currently focuses on validating and stabilizing a single delivery fact table.  
+
+A sanity-check aggregation confirms that delivery duration distributions differ meaningfully across AOI types within the defined analysis boundary, validating the analytical usefulness of the fact table.
