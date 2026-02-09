@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fact_delivery
+    description: Analytics-ready delivery fact table for AOI bottleneck analysis.
+    columns:
+      - name: order_id
+        tests: [not_null]
+      - name: delivery_duration_minutes
+        tests: [not_null]
+      - name: is_valid_for_bottleneck
+        tests: [not_null]
+      - name: delivery_duration_category
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['invalid', 'standard_delivery', 'long_tail_delivery']
